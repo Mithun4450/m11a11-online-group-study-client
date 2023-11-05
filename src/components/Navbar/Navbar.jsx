@@ -36,8 +36,8 @@ const Navbar = () => {
                     <div className="flex items-center">
                         
                         
-                        <NavLink to="/login" className="text-sm mr-4  text-blue-600 dark:text-blue-500 hover:underline">Register</NavLink>
-                        <NavLink to="/register" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</NavLink>
+                        <NavLink to="/register" className="text-sm mr-4  text-blue-600 dark:text-blue-500 hover:underline">Register</NavLink>
+                        <NavLink to="/login" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</NavLink>
                         
                     </div>
                 </div>
