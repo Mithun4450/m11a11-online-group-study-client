@@ -11,6 +11,7 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import CreateAssignment from './components/CreateAssignment/CreateAssignment';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/createAssignment",
-        element: <CreateAssignment></CreateAssignment>
+        element: <PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
       }
     ]
   },
