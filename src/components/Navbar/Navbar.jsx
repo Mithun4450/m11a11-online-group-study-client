@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 
 
 const Navbar = () => {
@@ -24,6 +27,17 @@ const Navbar = () => {
         
     </>
 
+    const { logOut, user} = useContext(AuthContext);
+    console.log(user)
+
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch()
+    }
+
+   
+
     return (
         <div>
             
@@ -34,10 +48,33 @@ const Navbar = () => {
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Study Online</span>
                     </a>
                     <div className="flex items-center">
+
+                    {
+                        user? <>
+                        {/* <p className="uppercase">{user.displayName}</p> */}
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-5">
+                            <div className="w-10 rounded-full">
+
+                            {
+                            user.photoURL? <img src={user.photoURL} /> : <img src="/public/avater.png"></img>
+
+                            }
+
+                            
+                            </div>
+                        </label>
+                        
+                            <NavLink onClick={handleLogOut} className="text-sm  text-blue-600 dark:text-blue-500 hover:underline mr-4 ">Logout</NavLink>
+                        </>: <>
+                            <NavLink to="/register" className="text-sm mr-4  text-blue-600 dark:text-blue-500 hover:underline">Register</NavLink>
+                            <NavLink to="/login" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</NavLink>
+                        
+                        </>
+                    
+                    }
                         
                         
-                        <NavLink to="/register" className="text-sm mr-4  text-blue-600 dark:text-blue-500 hover:underline">Register</NavLink>
-                        <NavLink to="/login" className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</NavLink>
+                        
                         
                     </div>
                 </div>
