@@ -1,0 +1,138 @@
+[
+    {
+      "title": "Math Homework",
+      "marks": 20,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-15",
+      "description": "Complete a set of math problems involving algebra and calculus. This assignment is worth 20 marks and is of intermediate difficulty."
+    },
+    {
+      "title": "History Essay",
+      "url": "https://i.ibb.co/tcwPFx1/history.jpg",
+      "marks": 15,
+      "difficultyLevel": "Easy",
+      "dueDate": "2023-11-20",
+      "description": "Write a 500-word essay on a historical event of your choice. This assignment is relatively easy and carries 15 marks."
+    },
+    {
+      "title": "Science Project",
+      "url": "https://i.ibb.co/Tmrf8z9/science.webp",
+      "marks": 30,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-11-30",
+      "description": "Create a science project presentation on a topic of your choosing. This is a challenging assignment worth 30 marks."
+    },
+    {
+      "title": "Literature Analysis",
+      "marks": 18,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-18",
+      "description": "Analyze a piece of literature and write a critical analysis essay. This assignment is of intermediate difficulty and is worth 18 marks."
+    },
+    {
+      "title": "Programming Assignment",
+      "marks": 25,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-11-25",
+      "description": "Write a program to solve a complex problem. This advanced programming assignment carries 25 marks."
+    },
+    {
+      "title": "Art Project",
+      "marks": 12,
+      "difficultyLevel": "Easy",
+      "dueDate": "2023-11-22",
+      "description": "Create an art project using your preferred medium. This assignment is relatively easy and is worth 12 marks."
+    },
+    {
+      "title": "Geography Quiz",
+      "marks": 10,
+      "difficultyLevel": "Easy",
+      "dueDate": "2023-11-17",
+      "description": "Take a geography quiz covering countries, capitals, and landmarks. This easy assignment carries 10 marks."
+    },
+    {
+      "title": "Chemistry Lab Report",
+      "marks": 22,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-28",
+      "description": "Conduct a chemistry experiment and write a detailed lab report. This intermediate assignment is worth 22 marks."
+    },
+    {
+      "title": "Physical Education Journal",
+      "marks": 8,
+      "difficultyLevel": "Easy",
+      "dueDate": "2023-11-16",
+      "description": "Keep a journal of your physical education activities and progress. This easy assignment carries 8 marks."
+    },
+    {
+      "title": "Music Performance",
+      "marks": 28,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-12-05",
+      "description": "Prepare and perform a musical piece of your choice. This challenging assignment is worth 28 marks."
+    },
+    {
+      "title": "Language Translation",
+      "marks": 16,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-19",
+      "description": "Translate a text from one language to another and provide an explanation. This intermediate assignment carries 16 marks."
+    },
+    {
+      "title": "Biology Research Paper",
+      "marks": 24,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-11-29",
+      "description": "Conduct in-depth research and write a biology research paper. This challenging assignment is worth 24 marks."
+    },
+    {
+      "title": "Computer Science Project",
+      "marks": 30,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-12-10",
+      "description": "Develop a complex software project in the field of computer science. This assignment is of advanced difficulty and carries 30 marks."
+    },
+    {
+      "title": "Economics Presentation",
+      "marks": 18,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-23",
+      "description": "Create a presentation on an economic topic and deliver it to the class. This intermediate assignment is worth 18 marks."
+    },
+    {
+      "title": "Physics Problem Set",
+      "marks": 14,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-21",
+      "description": "Solve a set of physics problems related to various concepts. This intermediate assignment carries 14 marks."
+    },
+    {
+      "title": "Psychology Case Study",
+      "marks": 26,
+      "difficultyLevel": "Advanced",
+      "dueDate": "2023-12-02",
+      "description": "Conduct a case study in psychology and present your findings. This challenging assignment is worth 26 marks."
+    },
+    {
+      "title": "Environmental Science Report",
+      "marks": 20,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-27",
+      "description": "Research and write a report on an environmental science topic. This intermediate assignment carries 20 marks."
+    },
+    {
+      "title": "Sociology Essay",
+      "marks": 17,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-24",
+      "description": "Write an essay on a sociological issue or concept. This intermediate assignment is worth 17 marks."
+    },
+    {
+      "title": "Foreign Language Oral Exam",
+      "marks": 12,
+      "difficultyLevel": "Intermediate",
+      "dueDate": "2023-11-26",
+      "description": "Prepare and take an oral exam in a foreign language. This intermediate assignment carries 12 marks."
+    }
+  ]
+  

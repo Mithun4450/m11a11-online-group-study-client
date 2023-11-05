@@ -15,7 +15,7 @@ const Navbar = () => {
             <NavLink to="/assignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Assignments</NavLink>
         </li>
         <li>
-            <NavLink to="/createAssignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Create Assignment</NavLink>
+            <NavLink to="/createAssignment" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Create Assignment</NavLink>
         </li>
         <li>
             <NavLink to="/myAssignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">My Assignments</NavLink>
@@ -56,7 +56,7 @@ const Navbar = () => {
                             <div className="w-10 rounded-full">
 
                             {
-                            user.photoURL? <img src={user.photoURL} /> : <img src="/public/avater.png"></img>
+                            user.photoURL? <img src={user.photoURL} /> : <img src=""></img>
 
                             }
 
