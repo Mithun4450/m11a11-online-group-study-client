@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const AssignmentDetails = () => {
     const assignment = useLoaderData();
-    const {title, photo, marks, difficulty, date, description} = assignment;
+    const {_id, title, photo, marks, difficulty, date, description} = assignment;
     return (
         <div className="hero min-h-screen bg-base-200 my-14">
             <div className="hero-content flex-col ">
@@ -15,7 +15,7 @@ const AssignmentDetails = () => {
                 <p className="text-xl  text-left mb-2"> <span className="font-bold">Due Date: </span>{date}</p>
                 <p className="text-xl  text-left mb-5"> <span className="font-bold">Difficulty level of assignment: </span>{difficulty}</p>
             
-                <Link to="/submissionForm"><button className="btn btn-secondary">Take Assignment</button></Link>
+                <Link to={`/submissionForm/${_id}`} ><button className="btn btn-secondary">Take Assignment</button></Link>
                 </div>
             </div>
         </div>

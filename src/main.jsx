@@ -16,6 +16,7 @@ import Assignments from './components/Assignments/Assignments';
 import UpdateAssignment from './components/UpdateAssignment/UpdateAssignment';
 import AssignmentDetails from './components/AssignmentDetails/AssignmentDetails';
 import SubmissionForm from './components/SubmissionForm/SubmissionForm';
+import SubmittedAssignment from './components/SubmittedAssignment/SubmittedAssignment';
 
 const router = createBrowserRouter([
   {
@@ -56,8 +57,13 @@ const router = createBrowserRouter([
 
       },
       {
-        path: "/submissionForm",
-        element: <SubmissionForm></SubmissionForm>
+        path: "/submissionForm/:id",
+        element: <SubmissionForm></SubmissionForm>,
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
+      },
+      {
+        path: "/submittedAssignments",
+        element: <SubmittedAssignment></SubmittedAssignment>
       }
     ]
   },

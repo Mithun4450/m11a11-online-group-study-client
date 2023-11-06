@@ -2,12 +2,20 @@
 import swal from 'sweetalert';
 import { useContext } from "react";
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
 
 const SubmissionForm = () => {
 
     const {user} = useContext(AuthContext);
-    console.log(user?.email)
-    const userEmail = user?.email
+    const userEmail = user?.email;
+    const examineeName = user?.displayName;
+    console.log(userEmail, examineeName );
+
+    const assignment = useLoaderData();
+    const {title, marks, photo} = assignment;
+    console.log(title, marks, photo);
+
+    const AssignmentStatus = "Pending";
     
 
     const handleAssignmentSubmission = e =>{
@@ -17,7 +25,7 @@ const SubmissionForm = () => {
         const quickNote = form.quickNote.value;
         console.log(userEmail, pdfLink, quickNote)
 
-        const submittedAssignment = {userEmail, pdfLink, quickNote};
+        const submittedAssignment = {userEmail, title, marks, photo, examineeName, pdfLink, quickNote, AssignmentStatus};
         
         fetch('http://localhost:5000/submittedAssignments', {
             method: 'POST',
