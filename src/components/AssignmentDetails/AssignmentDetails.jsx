@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const AssignmentDetails = () => {
@@ -14,8 +14,8 @@ const AssignmentDetails = () => {
                 <p className="text-xl  text-left mb-2"> <span className="font-bold">Total Marks: </span>{marks}</p>
                 <p className="text-xl  text-left mb-2"> <span className="font-bold">Due Date: </span>{date}</p>
                 <p className="text-xl  text-left mb-5"> <span className="font-bold">Difficulty level of assignment: </span>{difficulty}</p>
-                
-                <button className="btn btn-secondary">Take Assignment</button>
+            
+                <Link to="/submissionForm"><button className="btn btn-secondary">Take Assignment</button></Link>
                 </div>
             </div>
         </div>

@@ -15,6 +15,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Assignments from './components/Assignments/Assignments';
 import UpdateAssignment from './components/UpdateAssignment/UpdateAssignment';
 import AssignmentDetails from './components/AssignmentDetails/AssignmentDetails';
+import SubmissionForm from './components/SubmissionForm/SubmissionForm';
 
 const router = createBrowserRouter([
   {
@@ -50,9 +51,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/assignmentDetails/:id",
-        element: <AssignmentDetails></AssignmentDetails>,
+        element: <PrivateRoute><AssignmentDetails></AssignmentDetails></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
 
+      },
+      {
+        path: "/submissionForm",
+        element: <SubmissionForm></SubmissionForm>
       }
     ]
   },
