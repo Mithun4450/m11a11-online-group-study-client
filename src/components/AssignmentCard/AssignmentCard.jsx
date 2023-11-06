@@ -1,8 +1,10 @@
 
 
-const AssignmentCard = ({assignment}) => {
+const AssignmentCard = ({assignment, handleDelete}) => {
 
-    const {creatorEmail, title, photo, marks, difficulty, date, description} = assignment;
+    const {_id, creatorEmail, title, photo, marks, difficulty, date, description} = assignment;
+    
+
     return (
         <div>
             <div className="card card-compact bg-base-100 shadow-xl">
@@ -14,7 +16,7 @@ const AssignmentCard = ({assignment}) => {
                     <div className="card-actions justify-center">
                          <button className="btn btn-secondary btn-sm">View Assignment</button>
                          <button className="btn btn-secondary btn-sm">Update Assignment</button>
-                         <button className="btn btn-secondary btn-sm">Delete Assignment</button>
+                         <button onClick={() =>handleDelete(_id, creatorEmail)} className="btn btn-secondary btn-sm">Delete Assignment</button>
                     </div>
                 </div>
             </div>

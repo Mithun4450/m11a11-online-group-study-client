@@ -1,14 +1,26 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "../AssignmentCard/AssignmentCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import swal from 'sweetalert';
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Assignments = () => {
 
     const [assignments, setAssignments] = useState([]);
 
+    const {user} = useContext(AuthContext);
+    console.log(user.email)
+    const userEmail = user.email;
+
     // const assignments = useLoaderData();
     // console.log(assignments)
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/assignments/all')
+            .then(res =>res.json())
+            .then(data => setAssignments(data))
+    },[])
 
    const handleFilterByDifficulty = e =>{
         e.preventDefault();
@@ -27,6 +39,31 @@ const Assignments = () => {
             .then(data => setAssignments(data))
         }
    }
+
+
+   const handleDelete = (id, creatorEmail) =>{
+
+    if(userEmail !== creatorEmail){
+      return swal("Sorry!", "You are not the creator of this assignment!");
+    }
+    else{
+        const proceed = confirm("Are you sure you want to delete it?")
+        if(proceed){
+            fetch(`http://localhost:5000/assignments/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res =>res.json())
+            .then(data =>{
+                console.log(data)
+                if(data.deletedCount > 0){
+                    swal("Done!", "You have successfully deleted your assignment!", "success");
+                    const remaining = assignments.filter(assignment => assignment._id !== id);
+                    setAssignments(remaining);
+                }
+            })
+        }}
+    }
+    
 
     return (
         <div>
@@ -52,6 +89,7 @@ const Assignments = () => {
                     assignments.map(assignment => <AssignmentCard 
                         key={assignment._id}
                         assignment={assignment}
+                        handleDelete = {handleDelete}
                     ></AssignmentCard>)
                 }
            </div>
