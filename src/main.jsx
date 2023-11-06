@@ -13,6 +13,7 @@ import AuthProvider from './components/AuthProvider/AuthProvider';
 import CreateAssignment from './components/CreateAssignment/CreateAssignment';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Assignments from './components/Assignments/Assignments';
+import UpdateAssignment from './components/UpdateAssignment/UpdateAssignment';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
         path: "/assignments",
         element: <Assignments></Assignments>,
         // loader: () => fetch('http://localhost:5000/assignments')
+      },
+      {
+        path: "/updateAssignment/:id",
+        element: <UpdateAssignment></UpdateAssignment>,
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
+
       }
     ]
   },

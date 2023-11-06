@@ -10,8 +10,8 @@ const Assignments = () => {
     const [assignments, setAssignments] = useState([]);
 
     const {user} = useContext(AuthContext);
-    console.log(user.email)
-    const userEmail = user.email;
+    console.log(user?.email)
+    const userEmail = user?.email;
 
     // const assignments = useLoaderData();
     // console.log(assignments)
@@ -44,7 +44,7 @@ const Assignments = () => {
    const handleDelete = (id, creatorEmail) =>{
 
     if(userEmail !== creatorEmail){
-      return swal("Sorry!", "You are not the creator of this assignment!");
+      return swal("Sorry!", " You can not delete this assignment because you are not creator of it!");
     }
     else{
         const proceed = confirm("Are you sure you want to delete it?")

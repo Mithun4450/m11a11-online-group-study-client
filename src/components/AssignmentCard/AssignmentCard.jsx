@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const AssignmentCard = ({assignment, handleDelete}) => {
@@ -15,7 +16,7 @@ const AssignmentCard = ({assignment, handleDelete}) => {
                     <p> <span className="font-bold">Difficulty level of assignment: </span>{difficulty}</p>
                     <div className="card-actions justify-center">
                          <button className="btn btn-secondary btn-sm">View Assignment</button>
-                         <button className="btn btn-secondary btn-sm">Update Assignment</button>
+                         <Link to={`/updateAssignment/${_id}`}><button className="btn btn-secondary btn-sm">Update Assignment</button></Link>
                          <button onClick={() =>handleDelete(_id, creatorEmail)} className="btn btn-secondary btn-sm">Delete Assignment</button>
                     </div>
                 </div>
