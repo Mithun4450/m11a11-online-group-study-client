@@ -73,6 +73,9 @@ const Navbar = () => {
                         <ul className="flex flex-col justify-evenly items-center  md:flex-row  font-medium  space-y-2 md:space-x-8 text-base">
                            
                             <li>
+                                <NavLink to="/" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Home</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/assignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Assignments</NavLink>
                             </li>
                             <li>
