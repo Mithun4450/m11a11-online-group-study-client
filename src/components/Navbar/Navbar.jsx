@@ -2,18 +2,11 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import logo from "../../assets/images/studylogo.png"
+import ToolTip from "../ToolTip/ToolTip";
 
 
 
 const Navbar = () => {
-
-    const navLinks = <>
-        
-       
-        
-
-        
-    </>
 
     const { logOut, user} = useContext(AuthContext);
     console.log(user)
@@ -39,18 +32,25 @@ const Navbar = () => {
 
                         {
                             user? <>
+
+                                <ToolTip text={user.displayName}>
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-5">
+                                        <div className="w-10 rounded-full ">
+
+                                            {
+                                            user.photoURL? <img src={user.photoURL} /> : <img src=""></img>
+
+                                            }
+
+                                            
+                                            
+
+                                        
+                                        </div>
+                                    </label>
+                                </ToolTip>
                             
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-5">
-                                    <div className="w-10 rounded-full">
-
-                                        {
-                                        user.photoURL? <img src={user.photoURL} /> : <img src=""></img>
-
-                                        }
-
-                                    
-                                    </div>
-                                </label>
+                                
                             
                                 <NavLink onClick={handleLogOut} className="text-sm  text-blue-600 dark:text-blue-500 hover:underline mr-4 ">Logout</NavLink>
                             </>: <>
