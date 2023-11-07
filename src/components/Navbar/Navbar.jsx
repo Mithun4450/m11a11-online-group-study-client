@@ -76,7 +76,7 @@ const Navbar = () => {
                                 <NavLink to="/" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Home</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/assignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Assignments</NavLink>
+                                <NavLink to="/assignments" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">All Assignments</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/createAssignment" className=" dark:text-gray-500 hover:text-blue-600 hover:underline ">Create Assignment</NavLink>

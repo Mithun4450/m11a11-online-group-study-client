@@ -5,7 +5,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 const GiveMarks = () => {
     const submittedAssignment = useLoaderData();
     console.log(submittedAssignment)
-    const {_id, pdfLink, quickNote, title, marks, examineeName, userEmail} = submittedAssignment;
+    const {_id, pdfLink, quickNote, title, marks} = submittedAssignment;
     const navigate = useNavigate();
     
     const handleAssignmentMarking = e =>{
@@ -16,35 +16,27 @@ const GiveMarks = () => {
         console.log(obtainedMarks, feedback);
         const assignmentStatus = "Completed";
 
-        const markedAssignment = {title, marks, obtainedMarks, feedback, examineeName, userEmail, assignmentStatus};
-        
-        fetch('http://localhost:5000/markedAssignments', {
-            method: 'POST',
-            headers: {
-              'content-type' : 'application/json'
+    
+
+        fetch(`http://localhost:5000/submittedAssignments/mark/${_id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type': 'application/json'
             },
-            body: JSON.stringify(markedAssignment)
+            body: JSON.stringify({ obtainedMarks:obtainedMarks, feedback:feedback, AssignmentStatus:assignmentStatus})
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            if(data.modifiedCount > 0){
       
-          })
-            .then(res => res.json())
-            .then(data =>{
-              console.log(data)
-      
-              if(data.insertedId){
                 swal("Good job!","You have given marks to assignment successfully!", "success");
                 form.reset();
                 navigate("/markedAssignments")
-
-                fetch(`http://localhost:5000/submittedAssignments/${_id}`,{
-                    method: 'DELETE'
-                })
-                .then(res =>res.json())
-                .then(data =>{
-                    console.log(data)
-                    
-                })
-              }
-            })
+            }
+        })
+        
+      
     }
 
     return (

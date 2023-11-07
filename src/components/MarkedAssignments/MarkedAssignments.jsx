@@ -1,9 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+
+import { useEffect, useState } from "react";
 
 
 const MarkedAssignments = () => {
 
-    const markedAssignments = useLoaderData();
+
+    const [markedAssignments, setMarkedAssignments] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/submittedAssignments/mark?AssignmentStatus=Completed')
+        .then(res =>res.json())
+        .then(data=> setMarkedAssignments(data))
+    },[])
+
+    console.log(setMarkedAssignments)
 
     return (
         <div>
@@ -30,7 +40,7 @@ const MarkedAssignments = () => {
                     {
                         markedAssignments?.map(markedAssignment => <tr key={markedAssignment._id} className="text-sm text-center ">
                             <th></th>
-                            <td className="text-green-600 font-bold">{markedAssignment.assignmentStatus}</td>
+                            <td className="text-green-600 font-bold">{markedAssignment.AssignmentStatus}</td>
                             <td>{markedAssignment.title}</td>
                             <td>{markedAssignment.userEmail}</td>
                             <td>{markedAssignment.marks}</td>
