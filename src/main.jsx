@@ -17,6 +17,8 @@ import UpdateAssignment from './components/UpdateAssignment/UpdateAssignment';
 import AssignmentDetails from './components/AssignmentDetails/AssignmentDetails';
 import SubmissionForm from './components/SubmissionForm/SubmissionForm';
 import SubmittedAssignment from './components/SubmittedAssignment/SubmittedAssignment';
+import GiveMarks from './components/GiveMarks/GiveMarks';
+import MarkedAssignments from './components/MarkedAssignments/MarkedAssignments';
 
 const router = createBrowserRouter([
   {
@@ -63,7 +65,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/submittedAssignments",
-        element: <SubmittedAssignment></SubmittedAssignment>
+        element: <SubmittedAssignment></SubmittedAssignment>,
+        
+      },
+      {
+        path:"/giveMarks/:id",
+        element: <GiveMarks></GiveMarks>,
+        loader: ({params}) => fetch(`http://localhost:5000/submittedAssignments/submittedAssignmentWise/${params.id}`)
+      },
+      {
+        path: "/markedAssignments",
+        element: <MarkedAssignments></MarkedAssignments>,
+        loader: () => fetch('http://localhost:5000/markedAssignments')
       }
     ]
   },

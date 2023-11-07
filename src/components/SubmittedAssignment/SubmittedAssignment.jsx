@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const SubmittedAssignment = () => {
@@ -13,6 +14,7 @@ const SubmittedAssignment = () => {
 
     console.log(submittedAssignments)
 
+
     return (
         <div>
             <h1 className="text-3xl text-center font-bold mt-8 mb-5">All Submitted Assignments waiting for Marking</h1>
@@ -21,27 +23,29 @@ const SubmittedAssignment = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                    <tr className="text-xl text-center ">
+                    <tr className="text-base text-center ">
                         <th></th>
+                        <th>Assignment Status</th>
                         <th>Assignment Title</th>
                         <th>Submitted by</th>
-                        <th>Total Marks</th>
                         <th>Examinee Name</th>
-                        <th>Status</th>
+                        <th>Total Marks</th>
+                        
+                        
                     </tr>
                     </thead>
                     <tbody>
                     {/* row 1 */}
 
                     {
-                        submittedAssignments?.map(submittedAssignment => <tr key={submittedAssignment._id} className="text-base text-center ">
+                        submittedAssignments?.map(submittedAssignment => <tr key={submittedAssignment._id} className="text-sm text-center ">
                             <th></th>
+                            <td className="text-red-600 font-bold">{submittedAssignment.AssignmentStatus}</td>
                             <td>{submittedAssignment.title}</td>
                             <td>{submittedAssignment.userEmail}</td>
-                            <td>{submittedAssignment.marks}</td>
                             <td>{submittedAssignment.examineeName}</td>
-                            <td className="text-red-600 font-bold">{submittedAssignment.AssignmentStatus}</td>
-                            <td><button className="btn btn-accent">Give Mark</button></td>
+                            <td>{submittedAssignment.marks}</td>
+                            <td><Link to={`/giveMarks/${submittedAssignment._id}`}><button  className="btn btn-accent">Give Mark</button></Link></td>
                         </tr>)
                     }
                     
