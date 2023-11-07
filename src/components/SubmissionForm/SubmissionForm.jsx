@@ -2,10 +2,10 @@
 import swal from 'sweetalert';
 import { useContext } from "react";
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const SubmissionForm = () => {
-
+    const navigate = useNavigate()
     const {user} = useContext(AuthContext);
     const userEmail = user?.email;
     const examineeName = user?.displayName;
@@ -42,6 +42,7 @@ const SubmissionForm = () => {
               if(data.insertedId){
                 swal("Good job!","You have successfully submitted assignment!", "success");
                 form.reset();
+                navigate("/myAssignments")
               }
             })
     }
