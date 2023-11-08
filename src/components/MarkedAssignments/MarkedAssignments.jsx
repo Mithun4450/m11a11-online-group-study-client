@@ -8,7 +8,7 @@ const MarkedAssignments = () => {
     const [markedAssignments, setMarkedAssignments] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:5000/submittedAssignments/mark?AssignmentStatus=Completed')
+        fetch('http://localhost:5000/submittedAssignments/mark?AssignmentStatus=Completed', { credentials: 'include'})
         .then(res =>res.json())
         .then(data=> setMarkedAssignments(data))
     },[])

@@ -50,19 +50,19 @@ const router = createBrowserRouter([
       {
         path: "/updateAssignment/:id",
         element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`, { credentials: 'include'})
 
       },
       {
         path: "/assignmentDetails/:id",
         element: <PrivateRoute><AssignmentDetails></AssignmentDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`, { credentials: 'include'})
 
       },
       {
         path: "/submissionForm/:id",
         element: <SubmissionForm></SubmissionForm>,
-        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/assignments/assignmentWise/${params.id}`, { credentials: 'include'})
       },
       {
         path: "/submittedAssignments",
@@ -72,11 +72,11 @@ const router = createBrowserRouter([
       {
         path:"/giveMarks/:id",
         element: <GiveMarks></GiveMarks>,
-        loader: ({params}) => fetch(`http://localhost:5000/submittedAssignments/submittedAssignmentWise/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/submittedAssignments/submittedAssignmentWise/${params.id}`, { credentials: 'include'})
       },
       {
         path: "/markedAssignments",
-        element: <MarkedAssignments></MarkedAssignments>,
+        element: <PrivateRoute><MarkedAssignments></MarkedAssignments></PrivateRoute>,
         
       },
       {

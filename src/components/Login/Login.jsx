@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import swal from 'sweetalert';
+import axios from "axios";
 
 const Login = () => {
 
@@ -23,10 +24,22 @@ const Login = () => {
 
         loginWithEmailPassword(email, password)
             .then(result =>{
-                console.log(result.user);
-                e.target.reset();
-                swal("Good job!","You have successfully logged in!", "success");
-                navigate(location?.state? location.state : "/");
+                const loggedInUser = result.user;
+                console.log(loggedInUser)
+
+                const user = {email};
+                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                .then(res =>{
+                    console.log(res.data)
+                    if(res.data.success){
+                        e.target.reset();
+                        swal("Good job!","You have successfully logged in!", "success");
+                        navigate(location?.state ? location.state : "/")
+                    }
+                })
+                
+                
+                
             })
             .catch(error =>{
                 console.error(error)
@@ -39,9 +52,18 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         loginWithGoogle()
         .then(result =>{
-            console.log(result.user);
-            swal("Good job!", "You have successfully logged in!", "success");
-            navigate(location?.state? location.state : "/");
+            const loggedInUser = result.user;
+            console.log(loggedInUser)
+
+            
+            axios.post('http://localhost:5000/jwt',  {withCredentials: true})
+            .then(res =>{
+                console.log(res.data)
+                if(res.data.success){
+                    swal("Good job!","You have successfully logged in!", "success");
+                    navigate(location?.state ? location.state : "/")
+                }
+            })
         })
         .catch(error =>{
             console.error(error)
@@ -52,8 +74,15 @@ const Login = () => {
         loginWithGithub()
         .then(result =>{
             console.log(result.user);
-            swal("Good job!", "You have successfully logged in!", "success");
-            navigate(location?.state? location.state : "/");
+            
+            axios.post('http://localhost:5000/jwt',  {withCredentials: true})
+            .then(res =>{
+                console.log(res.data)
+                if(res.data.success){
+                    swal("Good job!","You have successfully logged in!", "success");
+                    navigate(location?.state ? location.state : "/")
+                }
+            })
         })
         .catch(error =>{
             console.error(error)
