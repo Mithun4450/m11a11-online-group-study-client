@@ -4,11 +4,11 @@ const FrequentlyAskedQuestions = () => {
     return (
         <div>
             <div className=" md:w-3/4 lg:w-1/2 mx-auto mb-9">
-              <h1 className="text-4xl font-bold text-center mb-5">Welcome to our Study Online FAQ</h1>
+              <h1 className="text-5xl font-bold text-center mb-5">Welcome to our Study Online FAQ</h1>
               <p className="text-base font-medium text-center">If you have questions, we have answers. This FAQ section is here to help you navigate our platform and find the information you need quickly and easily.</p>
             </div>
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                     <input type="radio" name="my-accordion-3" checked="checked" /> 
 
                     <div className="collapse-title text-xl font-medium">
@@ -21,7 +21,7 @@ const FrequentlyAskedQuestions = () => {
             </div>
 
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                 <input type="radio" name="my-accordion-3" /> 
 
                 <div className="collapse-title text-xl font-medium">
@@ -34,7 +34,7 @@ const FrequentlyAskedQuestions = () => {
             </div>
 
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                 <input type="radio" name="my-accordion-3" /> 
                 <div className="collapse-title text-xl font-medium">
                 Can I access study groups on a mobile device?
@@ -45,7 +45,7 @@ const FrequentlyAskedQuestions = () => {
             </div>
 
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                 <input type="radio" name="my-accordion-3" /> 
                 <div className="collapse-title text-xl font-medium">
                 How do I find study groups related to my specific course or topic?
@@ -56,7 +56,7 @@ const FrequentlyAskedQuestions = () => {
             </div>
 
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                 <input type="radio" name="my-accordion-3" /> 
                 <div className="collapse-title text-xl font-medium">
                 Is it free to join and participate in study groups?
@@ -67,7 +67,7 @@ const FrequentlyAskedQuestions = () => {
             </div>
 
 
-            <div className="collapse collapse-plus bg-base-200">
+            <div className="collapse collapse-plus bg-red-300">
                 <input type="radio" name="my-accordion-3" /> 
                 <div className="collapse-title text-xl font-medium">
                 How can I invite friends or classmates to join a study group?

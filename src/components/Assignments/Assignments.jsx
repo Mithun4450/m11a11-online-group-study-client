@@ -17,7 +17,7 @@ const Assignments = () => {
     // console.log(assignments)
 
     useEffect(() =>{
-        fetch('http://localhost:5000/assignments/all')
+        fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
             .then(res =>res.json())
             .then(data => setAssignments(data))
     },[])
@@ -28,13 +28,13 @@ const Assignments = () => {
 
         if(difficulty === "All"){
             
-            fetch('http://localhost:5000/assignments/all')
+            fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
             .then(res =>res.json())
             .then(data => setAssignments(data))
             
         }
         else{
-            fetch(`http://localhost:5000/assignments?difficulty=${difficulty}`)
+            fetch(`https://m11a11-online-group-study-server.vercel.app/assignments?difficulty=${difficulty}`)
             .then(res =>res.json())
             .then(data => setAssignments(data))
         }
@@ -49,7 +49,7 @@ const Assignments = () => {
     else{
         const proceed = confirm("Are you sure you want to delete it?")
         if(proceed){
-            fetch(`http://localhost:5000/assignments/${id}`,{
+            fetch(`https://m11a11-online-group-study-server.vercel.app/assignments/${id}`,{
                 method: 'DELETE'
             })
             .then(res =>res.json())
@@ -67,6 +67,11 @@ const Assignments = () => {
 
     return (
         <div>
+            <div className=" md:w-3/4 lg:w-1/2 mx-auto mb-9 my-14">
+              <h1 className="text-4xl font-bold text-center mb-5">We are creating a world where everyone enjoys learning.</h1>
+              <p className="text-base font-medium text-center">We don’t settle for creating Study Together as a platform, a product or a service. We are working hard to make Study Together a social learning movement, built on a virtual study space where learners are empowered to reach their full potential together</p>
+            </div>
+
             <div className=" my-8">
                 <form onSubmit={handleFilterByDifficulty} className="flex justify-center items-center gap-5" >
                    

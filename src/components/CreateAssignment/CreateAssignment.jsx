@@ -26,7 +26,7 @@ const CreateAssignment = () => {
 
         const assignment = {creatorEmail, title, photo, marks, difficulty, date, description};
         
-        fetch('http://localhost:5000/assignments', {
+        fetch('https://m11a11-online-group-study-server.vercel.app/assignments', {
             method: 'POST',
             headers: {
               'content-type' : 'application/json'
@@ -60,21 +60,21 @@ const CreateAssignment = () => {
                        <label className="label">
                             <span className="label-text">Assignment Title</span>
                         </label>
-                        <input type="text" name="title" placeholder="Title" className="input input-bordered"  />
+                        <input type="text" name="title" placeholder="Title" className="input input-bordered" required  />
                     </div>
 
                     <div className="form-control ">
                         <label className="label">
                             <span className="label-text">Assignment Image</span>
                         </label>
-                        <input type="text" name="photo" placeholder="Image URL" className="input input-bordered" />
+                        <input type="text" name="photo" placeholder="Image URL" className="input input-bordered" required />
                         
                     </div>
                     <div className="form-control">
                          <label className="label">
                             <span className="label-text">Assignment Marks</span>
                         </label>
-                        <input type="text" name="marks" placeholder="Total marks" className="input input-bordered"  />
+                        <input type="text" name="marks" placeholder="Total marks" className="input input-bordered" required  />
                     </div>
                    
                    
@@ -86,7 +86,7 @@ const CreateAssignment = () => {
                         <label className="label">
                             <span className="label-text">Choose difficulty level of Assignment</span>
                         </label>
-                        <select name="difficulty" id="difficulty">
+                        <select name="difficulty" id="difficulty" >
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
@@ -96,7 +96,7 @@ const CreateAssignment = () => {
                         <label className="label">
                                 <span className="label-text">Pick Assignment Due Date</span>
                         </label>
-                        <DatePicker name='date' selected={startDate} onChange={(date) => setStartDate(date)} />
+                        <DatePicker name='date' selected={startDate} onChange={(date) => setStartDate(date)}  />
                     </div>
                 </div>
                 
@@ -105,7 +105,7 @@ const CreateAssignment = () => {
                     <label className="label">
                             <span className="label-text">Assignment Description</span>
                     </label>
-                    <textarea className="border p-4 rounded-lg" name="description" placeholder="Write assignment description here...." id="" cols="20" rows="5"></textarea>
+                    <textarea className="border p-4 rounded-lg" name="description" placeholder="Write assignment description here...." id="" cols="20" rows="5" required></textarea>
                    
                 </div>
                 

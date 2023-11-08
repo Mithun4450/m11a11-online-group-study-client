@@ -28,7 +28,7 @@ const Login = () => {
                 console.log(loggedInUser)
 
                 const user = {email};
-                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                axios.post('https://m11a11-online-group-study-server.vercel.app/jwt', user, {withCredentials: true})
                 .then(res =>{
                     console.log(res.data)
                     if(res.data.success){
@@ -56,7 +56,7 @@ const Login = () => {
             console.log(loggedInUser)
 
             
-            axios.post('http://localhost:5000/jwt',  {withCredentials: true})
+            axios.post('https://m11a11-online-group-study-server.vercel.app/jwt',  {withCredentials: true})
             .then(res =>{
                 console.log(res.data)
                 if(res.data.success){
@@ -74,8 +74,8 @@ const Login = () => {
         loginWithGithub()
         .then(result =>{
             console.log(result.user);
-            
-            axios.post('http://localhost:5000/jwt',  {withCredentials: true})
+
+            axios.post('https://m11a11-online-group-study-server.vercel.app/jwt',  {withCredentials: true})
             .then(res =>{
                 console.log(res.data)
                 if(res.data.success){

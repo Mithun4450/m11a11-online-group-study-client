@@ -27,7 +27,7 @@ const SubmissionForm = () => {
 
         const submittedAssignment = {userEmail, title, marks, photo, examineeName, pdfLink, quickNote, AssignmentStatus};
         
-        fetch('http://localhost:5000/submittedAssignments', {
+        fetch('https://m11a11-online-group-study-server.vercel.app/submittedAssignments', {
             method: 'POST',
             headers: {
               'content-type' : 'application/json'

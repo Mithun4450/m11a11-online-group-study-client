@@ -12,7 +12,7 @@ const MyAssignments = () => {
     const [submittedAssignments, setSubmittedAssignments] = useState([]);
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/submittedAssignments/my?userEmail=${userEmail}`, { credentials: 'include'})
+        fetch(`https://m11a11-online-group-study-server.vercel.app/submittedAssignments/my?userEmail=${userEmail}`, { credentials: 'include'})
         .then(res =>res.json())
         .then(data=> setSubmittedAssignments(data))
     },[userEmail])
@@ -47,7 +47,7 @@ const MyAssignments = () => {
                         submittedAssignments?.map(submittedAssignment => <tr key={submittedAssignment._id} className="text-sm text-center ">
                             <th></th>
                             
-                            <td>{submittedAssignment.title}</td>
+                            <td className="text-left">{submittedAssignment.title}</td>
                             <td >{submittedAssignment.AssignmentStatus}</td>
                             <td>{submittedAssignment.marks}</td>
                             <td>{submittedAssignment.obtainedMarks || ""}</td>

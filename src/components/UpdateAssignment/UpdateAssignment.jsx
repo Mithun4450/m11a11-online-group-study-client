@@ -36,7 +36,7 @@ const UpdateAssignment = () => {
             return swal("Sorry!", "You can not update this assignment because you are not the creator of it!");
         }
         else{
-            fetch(`http://localhost:5000/assignments/assignmentWise/${assignment._id}`, {
+            fetch(`https://m11a11-online-group-study-server.vercel.app/assignments/assignmentWise/${assignment._id}`, {
                 method: 'PUT',
                 headers:{
                     'content-type': 'application/json'
