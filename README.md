@@ -1,4 +1,4 @@
-[Auto Shop](https://m11a11-online-group-study.web.app)
+[Study Online](https://m11a11-online-group-study.web.app)
 <br>
 Live Link: https://m11a11-online-group-study.web.app
 
