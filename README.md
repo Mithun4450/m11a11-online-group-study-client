@@ -3,7 +3,7 @@
 Live Link: https://m11a11-online-group-study.web.app
 
 
-About this project:
+Features of this project:
 * Study Online is a assignments based online study website. There anyone can register and use its study process. He can create assignment, he can take assignment as examination, even he can be examiner of assignment.
 
 * In this webpage, there are Home, All Assignment, Create Assignment, Submitted Assignment, My Assignment and Assignment Marks pages. Navbar and Footer are common for all pages. In the Home page there are banner, feature and FAQ parts.
@@ -19,5 +19,8 @@ About this project:
 * On the My Assignment page, any logged user can see his all pending and completed assignments.
 
 * On the Assignment Marks page, all assignment(marks already given) will be shown.
+
+Technology used in this project : React.js, React-Router, Tailwind CSS, DaisyUI, React-Icons, Sweetalert, Firebase, 
+Express.js, Jsonwebtoken, MongoDB
 
 
