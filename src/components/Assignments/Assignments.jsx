@@ -13,31 +13,68 @@ const Assignments = () => {
     console.log(user?.email)
     const userEmail = user?.email;
 
-    // const assignments = useLoaderData();
-    // console.log(assignments)
+    const itemsPerPage = 6;
+    const [currentPage, setCurrentPage] = useState(0);
+    const [count, setCount] = useState(0);
+    const numberOfPages = Math.ceil(count / itemsPerPage);
+
+    const pages = [...Array(numberOfPages).keys()]
+    console.log(pages);
+
+  
+
+    const handlePreviousPage = () =>{
+        if(currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const handleNextPage = () =>{
+        if(currentPage < pages.length -1) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
 
     useEffect(() =>{
-        fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
-            .then(res =>res.json())
-            .then(data => setAssignments(data))
+        fetch('http://localhost:5000/assignmentsCount')
+        .then(res => res.json())
+        .then(data =>{
+            setCount(data.count)
+        })
     },[])
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/assignments/all?page=${currentPage}&size=${itemsPerPage}`)
+            .then(res => res.json())
+            .then(data => setAssignments(data))
+    }, [currentPage, itemsPerPage]);
+
+
+
+    // useEffect(() =>{
+    //     fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
+    //         .then(res =>res.json())
+    //         .then(data => setAssignments(data))
+    // },[])
 
    const handleFilterByDifficulty = e =>{
         e.preventDefault();
         const difficulty = e.target.difficulty.value;
 
-        if(difficulty === "All"){
+        // if(difficulty === "All"){
             
-            fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
+        //     fetch('https://m11a11-online-group-study-server.vercel.app/assignments/all')
+        //     .then(res =>res.json())
+        //     .then(data => setAssignments(data))
+            
+        // }
+        // else{
+            
+        // }
+
+        fetch(`https://m11a11-online-group-study-server.vercel.app/assignments?difficulty=${difficulty}`)
             .then(res =>res.json())
             .then(data => setAssignments(data))
-            
-        }
-        else{
-            fetch(`https://m11a11-online-group-study-server.vercel.app/assignments?difficulty=${difficulty}`)
-            .then(res =>res.json())
-            .then(data => setAssignments(data))
-        }
    }
 
 
@@ -76,7 +113,7 @@ const Assignments = () => {
                 <form onSubmit={handleFilterByDifficulty} className="flex justify-center items-center gap-5" >
                    
                     <select className="text-xl"   name="difficulty" id="difficulty">
-                        <option value="All">All</option>
+                        {/* <option value="All">All</option> */}
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
@@ -97,6 +134,18 @@ const Assignments = () => {
                         handleDelete = {handleDelete}
                     ></AssignmentCard>)
                 }
+           </div>
+
+           <div className="w-1/4 mx-auto my-14">
+                <button className="mr-5" onClick={handlePreviousPage}>Previous</button>
+                {
+                    pages.map(page => <button 
+                        className={currentPage === page ? 'selected mr-5' : undefined}
+                        onClick={() => setCurrentPage(page)}
+                        key={page}
+                        >{page}</button>)
+                }
+                <button className="mr-5" onClick={handleNextPage}>Next</button>
            </div>
             
         </div>
