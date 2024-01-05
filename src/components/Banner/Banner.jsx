@@ -6,6 +6,7 @@ import banner4 from "../../assets/images/banner/geography.png"
 import banner5 from "../../assets/images/banner/chemistry.png"
 import banner6 from "../../assets/images/banner/art.png"
 
+
 const Banner = () => {
     return (
         <div>

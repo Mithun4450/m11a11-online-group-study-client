@@ -4,7 +4,7 @@ const FrequentlyAskedQuestions = () => {
     return (
         <div>
             <div className=" md:w-3/4 lg:w-1/2 mx-auto mb-9">
-              <h1 className="text-5xl font-bold text-center mb-5">Welcome to our Study Online FAQ</h1>
+              <h1 className="text-5xl font-bold text-center mb-5">Study Online FAQ</h1>
               <p className="text-base font-medium text-center">If you have questions, we have answers. This FAQ section is here to help you navigate our platform and find the information you need quickly and easily.</p>
             </div>
 
